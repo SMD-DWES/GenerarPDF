@@ -15,7 +15,7 @@ class Database extends Operaciones
 
     function selectEmpleados() 
     {
-        $sql = 'SELECT DNI, Nombre, Correo, Tlfno FROM empleados';
+        $sql = 'SELECT DNI, empleados.Nombre, empleados.Correo, Tlfno, pw FROM empleados LEFT JOIN accounts ON IdEmpleado=idCuenta';
         $query = $this->querySelect($sql);
 
         //Si hay un error lo muestro
